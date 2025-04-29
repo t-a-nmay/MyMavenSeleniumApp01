@@ -27,21 +27,18 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.time.Duration;
 
-/**
- * Hello world!
- *
- */
 public class App 
 {
     public static void main(String[] args) {
-        // Optional: Set the ChromeDriver path manually if it's not in your PATH
+        // Optional: Set chromedriver path manually
         // System.setProperty("webdriver.chrome.driver", "/path/to/chromedriver");
 
-        // Create ChromeOptions and set a unique user-data-dir
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--user-data-dir=/tmp/selenium-profile-" + System.currentTimeMillis());
+        options.addArguments("--headless=new"); // Use new headless mode (Chrome 109+)
+        options.addArguments("--no-sandbox");
+        options.addArguments("--disable-dev-shm-usage");
 
-        // Launch Chrome with the options
+        // DO NOT add --user-data-dir at all
         WebDriver driver = new ChromeDriver(options);
 
         try {
