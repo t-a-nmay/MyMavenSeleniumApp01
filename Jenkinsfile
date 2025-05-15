@@ -2,7 +2,7 @@ pipeline {
 	agent any
 	
 	tools {
-		maven 'MAVEN'
+		maven 'Maven'
 		jdk 'JDK'
 	}
 	
@@ -10,7 +10,7 @@ pipeline {
 	
 		stage('Checkout') {
 			steps {
-				git branch: 'master', url: 'https://github.com/vsshubh/SeleniumApp.git'
+				git branch: 'master', url: 'https://github.com/t-a-nmay/MyMavenSeleniumApp01.git'
 			}
 		}
 		
